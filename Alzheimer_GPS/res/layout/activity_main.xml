@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pl.soad.alzheimer_gps.MainActivity" >
+    
+ 		<TextView
+ 		    android:id="@+id/textView1"
+ 		    android:layout_width="fill_parent"
+ 		    android:layout_height="wrap_content"
+ 		    android:text="Lista kontaktów" />
+ 		
+ 		<ListView
+ 		    android:id="@+id/lista_kontaktow"
+ 		    android:layout_width="match_parent"
+ 		    android:layout_height="wrap_content"
+ 		    android:layout_above="@+id/button_dodaj_kontakt"
+ 		    android:layout_below="@+id/textView1"
+ 		    android:layout_centerHorizontal="true" >
+    
+ 		</ListView> 
+
+    <Button
+        android:id="@+id/button_dodaj_kontakt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_aktualizuj_kontakt"
+        android:text="Dodaj" />
+
+    <Button
+        android:id="@+id/button_aktualizuj_kontakt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_above="@+id/button_usun_kontakt"
+        android:text="Aktualizuj" />
+
+    <Button
+        android:id="@+id/button_usun_kontakt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Usuń" />
+
+</RelativeLayout>
