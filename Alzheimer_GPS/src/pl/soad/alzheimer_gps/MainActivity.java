@@ -7,17 +7,68 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+	
+	private Button btn_turnonoff;
+	private Button btn_contacts;
+	private Button btn_settings;
+	private DatabaseManager dbmanager;
+	
+	private boolean onoff;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Intent i = new Intent(getApplicationContext(), DisplayActivity.class);
-        startActivity(i);
-        
+		dbmanager = new DatabaseManager(this);
+		
+		btn_turnonoff = (Button) findViewById(R.id.btn_turnonoff);
+		btn_contacts = (Button) findViewById(R.id.btn_contacts);
+		btn_settings = (Button) findViewById(R.id.btn_settings);
+		
+		onoff = false;
+		
+		btn_turnonoff.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (onoff) {
+					btn_turnonoff.setText("W³¹cz œledzenie");
+					onoff = false;
+				}
+				else {
+					btn_turnonoff.setText("Wy³¹cz œledzenie");
+					onoff = true;
+				}
+				
+			}
+		});
+		
+		btn_settings.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				dbmanager.sendSms();
+				
+			}
+		});
+		
+		btn_contacts.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(), DisplayActivity.class);
+		        startActivity(i);	
+			}
+		});
+		    
 	}
 
 

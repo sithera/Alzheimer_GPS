@@ -6,43 +6,43 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pl.soad.alzheimer_gps.MainActivity" >
+    tools:context="pl.soad.alzheimer_gps.MainActivity"
+    android:background="@drawable/background" >
     
  		<TextView
- 		    android:id="@+id/textView1"
+ 		    android:id="@+id/app_name"
  		    android:layout_width="fill_parent"
  		    android:layout_height="wrap_content"
- 		    android:text="Lista kontaktów" />
+ 		    android:text="Alzheimer GPS"
+ 		    android:gravity="center"
+ 		    android:textColor="#FFFFFF"
+ 		    android:textSize="30sp"
+ 		    android:textStyle="bold" /> 
+ 		    
+ 		<Button
+        android:id="@+id/btn_turnonoff"
+        android:background="@drawable/button_red"
+        android:layout_above="@+id/btn_contacts"
+        android:layout_marginTop="10dp"
+        android:text="Włącz śledzenie"
+        style = "@style/ButtonText" />
+
+ 		<Button
+        android:id="@+id/btn_contacts"
+        android:background="@drawable/button_red"
+        android:layout_above="@+id/btn_settings"
+        android:layout_marginTop="10dp"
+        android:text="Osoby kontaktowe"
+        style = "@style/ButtonText" />
  		
- 		<ListView
- 		    android:id="@+id/lista_kontaktow"
- 		    android:layout_width="match_parent"
- 		    android:layout_height="wrap_content"
- 		    android:layout_above="@+id/button_dodaj_kontakt"
- 		    android:layout_below="@+id/textView1"
- 		    android:layout_centerHorizontal="true" >
-    
- 		</ListView> 
-
-    <Button
-        android:id="@+id/button_dodaj_kontakt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_aktualizuj_kontakt"
-        android:text="Dodaj" />
-
-    <Button
-        android:id="@+id/button_aktualizuj_kontakt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:layout_above="@+id/button_usun_kontakt"
-        android:text="Aktualizuj" />
-
-    <Button
-        android:id="@+id/button_usun_kontakt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+ 		<Button
+        android:id="@+id/btn_settings"
+        android:background="@drawable/button_red"
         android:layout_alignParentBottom="true"
-        android:text="Usuń" />
+        android:layout_marginTop="10dp"
+        android:text="Ustawienia"
+        style = "@style/ButtonText" />
+
+
 
 </RelativeLayout>

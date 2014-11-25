@@ -29,28 +29,27 @@ public final class R {
     }
     public static final class id {
         public static final int List=0x7f08000c;
-        public static final int action_settings=0x7f080016;
+        public static final int action_settings=0x7f080015;
+        public static final int app_name=0x7f08000e;
         public static final int btnAdd=0x7f08000d;
-        public static final int button_aktualizuj_kontakt=0x7f080011;
-        public static final int button_dodaj_kontakt=0x7f080010;
-        public static final int button_usun_kontakt=0x7f080012;
+        public static final int btn_contacts=0x7f080010;
+        public static final int btn_settings=0x7f080011;
+        public static final int btn_turnonoff=0x7f08000f;
         public static final int divider=0x7f08000b;
         public static final int frst_TextView=0x7f080001;
         public static final int frst_editTxt=0x7f080002;
         public static final int last_TextView=0x7f080004;
         public static final int last_editTxt=0x7f080005;
-        public static final int lista_kontaktow=0x7f08000f;
         public static final int phone_TextView=0x7f080007;
         public static final int phone_editTxt=0x7f080008;
         public static final int save_btn=0x7f080009;
         public static final int tableRow1=0x7f080000;
         public static final int tableRow2=0x7f080003;
         public static final int tableRow3=0x7f080006;
-        public static final int textView1=0x7f08000e;
         public static final int title_display_activity=0x7f08000a;
-        public static final int txt_fName=0x7f080014;
-        public static final int txt_id=0x7f080013;
-        public static final int txt_lName=0x7f080015;
+        public static final int txt_fName=0x7f080013;
+        public static final int txt_id=0x7f080012;
+        public static final int txt_lName=0x7f080014;
     }
     public static final class layout {
         public static final int activity_add=0x7f030000;
