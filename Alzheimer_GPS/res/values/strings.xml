@@ -43,5 +43,9 @@
 
     <string name="title_activity_gps">GpsActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="gps_t1">dostawca</string>
+    <string name="gps_t2">longitude</string>
+    <string name="gps_t3">latitude</string>
+    <string name="gps_t4">history</string>
 
 </resources>
