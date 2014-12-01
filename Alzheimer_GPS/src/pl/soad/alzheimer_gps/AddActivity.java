@@ -79,8 +79,6 @@ public class AddActivity extends Activity implements OnClickListener{
 		values.put("imie",fname);
 		values.put("nazwisko",lname);
 		values.put("telefon",phone);
-
-		System.out.println("");
 		
 		if(isUpdate) {    
 			// Update database with new data 
