@@ -19,8 +19,6 @@ public class MainActivity extends Activity {
 	private DatabaseManager dbmanager;
 	
 	private boolean onoff;
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,8 @@ public class MainActivity extends Activity {
 				else {
 					btn_turnonoff.setText("Wy³¹cz œledzenie");
 					onoff = true;
+					Intent i = new Intent(getApplicationContext(), GpsActivity.class);
+					startActivity(i);
 				}
 				
 			}
