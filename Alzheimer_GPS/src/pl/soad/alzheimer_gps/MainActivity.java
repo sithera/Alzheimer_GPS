@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
 	private DatabaseManager dbmanager;
 	
 	private boolean onoff;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

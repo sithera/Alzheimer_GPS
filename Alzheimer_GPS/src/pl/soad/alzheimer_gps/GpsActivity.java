@@ -1,10 +1,7 @@
 package pl.soad.alzheimer_gps;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
-
 import android.app.Activity;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import android.app.AlarmManager;
@@ -65,11 +62,19 @@ import android.view.MenuItem;
 
 public class GpsActivity extends Activity {
 >>>>>>> parent of 36ae6a0... changes in GpsActivity
+=======
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class GpsActivity extends Activity {
+>>>>>>> parent of f7836b1... adding features to gps
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gps);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -121,92 +126,11 @@ public class GpsActivity extends Activity {
 		e2.setText("19.432543");
 		
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
-	}
-		
-	@Override
-	public void onLocationChanged(Location location) {
-			}
-
-	public void checkLocation(){
-		
-		longitudeChecked = Double.parseDouble(e1.getText().toString());
-		latitudeChecked = Double.parseDouble(e2.getText().toString());
-
-		longitude = longitude * 111.32;
-		longitude = longitude * Math.cos(latitude);
-		
-		latitude *= 110.54;
-		longitudeChecked = longitudeChecked * 111.32 * Math.cos(latitudeChecked);
-		latitudeChecked *= 110.54;
-
-		dLatitude = latitude - latitudeChecked;
-		dLongitude = longitude - longitudeChecked;
-
-		Log.d("TAG", String.valueOf(dLatitude));
-		Log.d("TAG", String.valueOf(dLongitude));
-		
-		distance = Math.sqrt(Math.pow(dLatitude, 2) + Math.pow(dLongitude, 2));
-
-		// w promieniu 2 km to zgodnosc do okolo 3-4 miejsca po przecinku we wspolrzednych
-		if (distance > r){
-			Toast.makeText(getApplicationContext(), "jestes poza obszarem", Toast.LENGTH_LONG).show();
-			// send sms;
-		}
+=======
+>>>>>>> parent of f7836b1... adding features to gps
 	}
 
-	public Location getLocation(){
-		try{
-			locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
-			isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-			isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-			
-			if( isGpsEnabled || isNetworkEnabled){
-				this.canGetLocation = true;
-
-				if(isNetworkEnabled){
-					bestProvider = "network";
-					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
-					if(locationManager != null){
-						location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-					}
-					if(location != null){
-						longitude = location.getLongitude();
-						latitude = location.getLatitude();
-					}
-				}
-				
-				if(isGpsEnabled){
-					bestProvider = "gps";
-					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
-					if(locationManager != null){
-						location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-					}
-					if(location != null){
-						longitude = location.getLongitude();
-						latitude = location.getLatitude();
-					}
-				}
-				
-			}
-			
-			
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		return location;
-	}
-	
-	public void updateTextViews(){
-
-		//String str = "latitude " + getLatitude() + "\nlongitude" + getLongitude();
-		//Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();
-
-		t1.setText("najlepszy dostawca: " + bestProvider);
-		t2.setText("longitude: " + getLongitude());
-		t3.setText("latitude: " + getLatitude());
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 		t4.setText(t4.getText() + "" + getLongitude() + " / " + getLatitude() + "\n");
 
@@ -367,4 +291,24 @@ public class GpsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 >>>>>>> parent of 36ae6a0... changes in GpsActivity
 	}
+=======
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.gps, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+>>>>>>> parent of f7836b1... adding features to gps
 }

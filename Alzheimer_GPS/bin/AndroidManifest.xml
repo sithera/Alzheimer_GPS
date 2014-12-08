@@ -6,6 +6,7 @@
 
     <uses-permission android:name="android.permission.SEND_SMS" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <<<<<<< HEAD
@@ -17,6 +18,9 @@
 =======
 
 >>>>>>> parent of 36ae6a0... changes in GpsActivity
+=======
+
+>>>>>>> parent of f7836b1... adding features to gps
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />
@@ -47,12 +51,6 @@
             android:name=".GpsActivity"
             android:label="@string/title_activity_gps" >
         </activity>
-	        
-	    <receiver
-		    android:name="pl.soad.alzheimer_gps.AlarmReceiver"
-		    android:exported="false">
-		</receiver>
     </application>
-    
 
 </manifest>

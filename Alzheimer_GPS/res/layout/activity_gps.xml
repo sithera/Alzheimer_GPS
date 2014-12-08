@@ -9,6 +9,7 @@
     tools:context="pl.soad.alzheimer_gps.GpsActivity" >
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <TableRow
         android:id="@+id/gps_tableRow1"
@@ -238,4 +239,11 @@
         android:text="@string/hello_world" />
 
 >>>>>>> parent of 36ae6a0... changes in GpsActivity
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+>>>>>>> parent of f7836b1... adding features to gps
 </RelativeLayout>
