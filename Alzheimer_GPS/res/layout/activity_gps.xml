@@ -8,8 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pl.soad.alzheimer_gps.GpsActivity" >
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     <TableRow
         android:id="@+id/gps_tableRow1"
@@ -76,7 +74,6 @@
     <TableRow
         android:id="@+id/gps_tableRow4"
         android:layout_width="fill_parent"
-<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
 		android:layout_below="@+id/gps_tableRow3"
@@ -124,66 +121,12 @@
 	    </EditText>
 
     </TableRow>
+    
     <TableRow
         android:id="@+id/gps_tableRow6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-=======
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-		android:layout_below="@+id/gps_tableRow3"
-		android:background="@drawable/list_row_grey" >
-        
-        <TextView 
-            android:id="@+id/gps_TextView4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/gps_t4"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-        
-    </TableRow>
-    <TableRow
-        android:id="@+id/gps_tableRow5"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-		android:layout_below="@+id/gps_tableRow4"
-		android:background="@drawable/list_row_grey" >
-        
-        <TextView 
-            android:id="@+id/gps_TextView5"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/gps_t2"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-        
-        <EditText
-	        android:id="@+id/gps_editText1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:ems="10"
-	        android:inputType="phone"
-	        android:layout_weight="2"
-	        android:inputType="numberDecimal" >
-	        <requestFocus />
-	    </EditText>
-
-    </TableRow>
-    <TableRow
-        android:id="@+id/gps_tableRow6"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
->>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
 		android:layout_below="@+id/gps_tableRow5"
 		android:background="@drawable/list_row_grey" >
         
@@ -203,15 +146,10 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:ems="10"
-<<<<<<< HEAD
-=======
-	        android:inputType="phone"
->>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
 	        android:layout_weight="2"
 	        android:inputType="numberDecimal" />
 
     </TableRow>
-<<<<<<< HEAD
     <TableRow
         android:id="@+id/gps_tableRow7"
         android:layout_width="fill_parent"
@@ -229,21 +167,14 @@
         
         
     </TableRow>
-=======
->>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
-    
-=======
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
->>>>>>> parent of 36ae6a0... changes in GpsActivity
-=======
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
->>>>>>> parent of f7836b1... adding features to gps
 </RelativeLayout>
