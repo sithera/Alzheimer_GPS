@@ -5,6 +5,7 @@
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.SEND_SMS" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <<<<<<< HEAD
@@ -13,6 +14,9 @@
 =======
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
     
+=======
+
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />

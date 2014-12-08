@@ -30,6 +30,7 @@ public final class R {
     public static final class id {
         public static final int List=0x7f08000c;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int action_settings=0x7f080025;
         public static final int app_name=0x7f08001e;
         public static final int btnAdd=0x7f08000d;
@@ -69,6 +70,17 @@ public final class R {
         public static final int gps_tableRow7=0x7f08001c;
 =======
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
+=======
+        public static final int action_settings=0x7f080015;
+        public static final int app_name=0x7f08000e;
+        public static final int btnAdd=0x7f08000d;
+        public static final int btn_contacts=0x7f080010;
+        public static final int btn_settings=0x7f080011;
+        public static final int btn_turnonoff=0x7f08000f;
+        public static final int divider=0x7f08000b;
+        public static final int frst_TextView=0x7f080001;
+        public static final int frst_editTxt=0x7f080002;
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
         public static final int last_TextView=0x7f080004;
         public static final int last_editTxt=0x7f080005;
         public static final int phone_TextView=0x7f080007;
@@ -79,6 +91,7 @@ public final class R {
         public static final int tableRow3=0x7f080006;
         public static final int title_display_activity=0x7f08000a;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int txt_fName=0x7f080023;
         public static final int txt_id=0x7f080022;
         public static final int txt_lName=0x7f080024;
@@ -87,6 +100,11 @@ public final class R {
         public static final int txt_id=0x7f080020;
         public static final int txt_lName=0x7f080022;
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
+=======
+        public static final int txt_fName=0x7f080013;
+        public static final int txt_id=0x7f080012;
+        public static final int txt_lName=0x7f080014;
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
     }
     public static final class layout {
         public static final int activity_add=0x7f030000;
@@ -105,10 +123,6 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int gps_t1=0x7f050006;
-        public static final int gps_t2=0x7f050007;
-        public static final int gps_t3=0x7f050008;
-        public static final int gps_t4=0x7f050009;
         public static final int hello_world=0x7f050005;
         public static final int title_activity_add=0x7f050002;
         public static final int title_activity_display=0x7f050003;

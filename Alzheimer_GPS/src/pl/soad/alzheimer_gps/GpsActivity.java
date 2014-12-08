@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import android.app.Activity;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -57,22 +58,19 @@ import android.widget.TextView;
 
 public class GpsActivity extends Activity implements LocationListener {
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
+=======
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-	TextView t1, t2, t3, t4;
-	EditText e1, e2;
-	LocationManager locationManager;
-	Location location;
-	Criteria criteria;
-	String bestProvider;
-	private double r = 2, rEarth = 6371; // km
-	private double longitude, latitude, longitudeChecked, latitudeChecked, longitudeMargin, latitudeMargin;
-	private double dLatitude, dLongitude, tmp1, tmp2, distance;
-	
-	
+public class GpsActivity extends Activity {
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gps);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -347,6 +345,26 @@ public class GpsActivity extends Activity implements LocationListener {
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
 		// TODO Auto-generated method stub
 		
+=======
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.gps, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
+	}
 }

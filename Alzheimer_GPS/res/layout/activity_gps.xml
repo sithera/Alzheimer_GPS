@@ -6,9 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/background"
     tools:context="pl.soad.alzheimer_gps.GpsActivity" >
 
+<<<<<<< HEAD
 
     <TableRow
         android:id="@+id/gps_tableRow1"
@@ -231,4 +231,11 @@
 =======
 >>>>>>> 36ae6a053960446e53f49e98ccadaeb204c5de5a
     
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+>>>>>>> parent of 36ae6a0... changes in GpsActivity
 </RelativeLayout>
