@@ -36,7 +36,7 @@ public class GpsActivity extends Activity implements LocationListener{
 	Intent intent;
 	PendingIntent pendingIntent;
 	private double r = 2; // km
-	private double longitude, latitude, longitudeChecked, latitudeChecked,
+	private double longitude, latitude, longitudeChecked, latitudeChecked, 
 	dLatitude, dLongitude, distance;
 	Context context = GpsActivity.this;
 	boolean canGetLocation = false;
@@ -45,7 +45,7 @@ public class GpsActivity extends Activity implements LocationListener{
 
 	private static final long MIN_TIME = 1000 * 10 * 1; // 10 seconds
 	private static final long MIN_DISTANCE = 1000; // meters
-
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,40 +58,44 @@ public class GpsActivity extends Activity implements LocationListener{
 		t4 = (TextView) findViewById(R.id.gps_TextView4);
 		e1 = (EditText) findViewById(R.id.gps_editText1);
 		e2 = (EditText) findViewById(R.id.gps_editText2);
-		b1 = (Button)   findViewById(R.id.gps_btn1);
+		b1 = (Button) 	findViewById(R.id.gps_btn1);
 
 		geocoder = new Geocoder(this, Locale.getDefault());
-
+		
 		t4.setText("historia\n");
 		e1.setText("50.523493");
 		e2.setText("19.432543");
-
+		
 		b1.setOnClickListener(new OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 				getLocation();
 				updateTextViews();
 				checkLocation();
 				translateLongitude();
-
+				
 			}
 
 		});
 	}
-
+		
 	@Override
 	public void onLocationChanged(Location location) {
+		updateTextViews();
+		checkLocation();
+		translateLongitude();
+		
 	}
 
 	public void checkLocation(){
-
+		
 		longitudeChecked = Double.parseDouble(e1.getText().toString());
 		latitudeChecked = Double.parseDouble(e2.getText().toString());
 
 		longitude = longitude * 111.32;
 		longitude = longitude * Math.cos(latitude);
-
+		
 		latitude *= 110.54;
 		longitudeChecked = longitudeChecked * 111.32 * Math.cos(latitudeChecked);
 		latitudeChecked *= 110.54;
@@ -99,9 +103,9 @@ public class GpsActivity extends Activity implements LocationListener{
 		dLatitude = latitude - latitudeChecked;
 		dLongitude = longitude - longitudeChecked;
 
-		Log.d("TAG", String.valueOf(dLatitude));
-		Log.d("TAG", String.valueOf(dLongitude));
-
+		//Log.d("TAG", String.valueOf(dLatitude));
+		//Log.d("TAG", String.valueOf(dLongitude));
+		
 		distance = Math.sqrt(Math.pow(dLatitude, 2) + Math.pow(dLongitude, 2));
 
 		// w promieniu 2 km to zgodnosc do okolo 3-4 miejsca po przecinku we wspolrzednych
@@ -116,7 +120,7 @@ public class GpsActivity extends Activity implements LocationListener{
 			locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
 			isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 			isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
+			
 			if( isGpsEnabled || isNetworkEnabled){
 				this.canGetLocation = true;
 
@@ -131,30 +135,33 @@ public class GpsActivity extends Activity implements LocationListener{
 						latitude = location.getLatitude();
 					}
 				}
-
+				
 				if(isGpsEnabled){
 					bestProvider = "gps";
 					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
 					if(locationManager != null){
 						location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 					}
+					Log.d("mojtag", String.valueOf(location.getLongitude()));
+					Log.d("TAG", String.valueOf(getLatitude()));
+					Log.d("taggg", "jee");
 					if(location != null){
 						longitude = location.getLongitude();
 						latitude = location.getLatitude();
 					}
 				}
-
+				
 			}
-
-
+			
+			
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-
+		
 		return location;
 	}
-
+	
 	public void updateTextViews(){
 
 		//String str = "latitude " + getLatitude() + "\nlongitude" + getLongitude();
@@ -167,14 +174,14 @@ public class GpsActivity extends Activity implements LocationListener{
 		t4.setText(t4.getText() + "" + getLongitude() + " / " + getLatitude() + "\n");
 
 	}
-
+	
 	public void translateLongitude(){
-
+		
 		List<Address> addresses = null;
 		try {
-			Log.d("t", "j1");
+			//Log.d("t", "j1");
 			addresses = geocoder.getFromLocation(getLatitude(), getLongitude(), 1);
-			Log.d("t", "j2");
+			//Log.d("t", "j2");
 			String result = "address: \n";
 
 			if (addresses != null && addresses.size() > 0){
@@ -190,55 +197,55 @@ public class GpsActivity extends Activity implements LocationListener{
 			else{
 				t4.setText(t4.getText() + "can't find address \n");
 			}
-		}
+		} 
 		catch (IOException e) {
-			Toast.makeText(getApplicationContext(),
-					e.toString(),
+			Toast.makeText(getApplicationContext(), 
+					e.toString(), 
 					Toast.LENGTH_LONG).show();
 		}
 
 	}
-
+	
 	public void stopUsingGps(){
 		if(locationManager != null){
 			locationManager.removeUpdates(GpsActivity.this);
 		}
 	}
-
+	
 	public double getLongitude(){
 		if(location != null){
 			longitude = location.getLongitude();
 		}
 		return longitude;
 	}
-
+	
 	public double getLatitude(){
 		if(location != null){
 			latitude = location.getLatitude();
 		}
 		return latitude;
 	}
-
+	
 	public boolean canGetLocation(){
 		return this.canGetLocation;
 	}
-
+	
 	@Override
 	public void onProviderDisabled(String arg0) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void onProviderEnabled(String arg0) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
