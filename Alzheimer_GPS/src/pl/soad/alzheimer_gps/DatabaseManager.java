@@ -21,11 +21,21 @@ public class DatabaseManager extends SQLiteOpenHelper {
 				"nazwisko text," +
 				"telefon text);" +
 				"");
+		db.execSQL("create table startpoint(" +
+				"nr integer primary key," +
+				"lan real," +
+				"lon real," +
+				"address text," + 
+				"range integer);" +
+				"");
+		db.execSQL("INSERT INTO startpoint values (1, 0, 0,'',0)");
+		
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXISTS telefony");
+		db.execSQL("DROP TABLE IF EXISTS startpoint");
 		onCreate(db);	
 	}
 	
@@ -44,6 +54,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 				sms.sendTextMessage((cursor.getString(0)), null, wiadomosc, null, null);
 			} while(cursor.moveToNext());
 		}
-
+		cursor.close();
+		db.close();
 	}
 }

@@ -40,11 +40,10 @@
             android:name=".GpsActivity"
             android:label="@string/title_activity_gps" >
         </activity>
-
-        <receiver
-            android:name="pl.soad.alzheimer_gps.AlarmReceiver"
-            android:exported="false" >
-        </receiver>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

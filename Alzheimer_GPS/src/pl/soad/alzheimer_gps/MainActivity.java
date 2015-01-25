@@ -16,23 +16,17 @@ public class MainActivity extends Activity {
 	private Button btn_turnonoff;
 	private Button btn_contacts;
 	private Button btn_settings;
-	private DatabaseManager dbmanager;
-	
 	private boolean onoff;
-	
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		dbmanager = new DatabaseManager(this);
-		
+	
 		btn_turnonoff = (Button) findViewById(R.id.btn_turnonoff);
 		btn_contacts = (Button) findViewById(R.id.btn_contacts);
 		btn_settings = (Button) findViewById(R.id.btn_settings);
-		
 		onoff = false;
 		
 		btn_turnonoff.setOnClickListener(new OnClickListener() {
@@ -47,6 +41,8 @@ public class MainActivity extends Activity {
 					btn_turnonoff.setText("Wy³¹cz œledzenie");
 					onoff = true;
 				}
+				Intent i = new Intent(getApplicationContext(), GpsActivity.class);
+		        startActivity(i);
 				
 			}
 		});
@@ -55,7 +51,9 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				dbmanager.sendSms();
+				
+				Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+		        startActivity(i);
 				
 			}
 		});

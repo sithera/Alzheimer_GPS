@@ -23,8 +23,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/title_display_activity"
-        android:background="@drawable/list_row_grey" />
+        android:layout_below="@+id/title_display_activity"/>
 
     <ListView
         android:id="@+id/List"

@@ -15,13 +15,12 @@ import android.widget.TextView;
 public class DisplayAdapter extends BaseAdapter {
 
 	private Context context;
-	private ArrayList<String> id;
 	private ArrayList<String> fname;
 	private ArrayList<String> lname;
+	private ArrayList<String> phone;
 
-	public DisplayAdapter(Context c, ArrayList<String> id,ArrayList<String> fname, ArrayList<String> lname) {
+	public DisplayAdapter(Context c, ArrayList<String> fname, ArrayList<String> lname) {
 		this.context = c;
-		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 	}
@@ -29,7 +28,7 @@ public class DisplayAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return id.size();
+		return fname.size();
 	}
 
 	@Override
@@ -52,7 +51,6 @@ public class DisplayAdapter extends BaseAdapter {
 			layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			child = layoutInflater.inflate(R.layout.list_row, null);
 			holder = new Holder();
-			holder.txt_id = (TextView) child.findViewById(R.id.txt_id);
 			holder.txt_fName = (TextView) child.findViewById(R.id.txt_fName);
 			holder.txt_lName = (TextView) child.findViewById(R.id.txt_lName);
 			child.setTag(holder);
@@ -62,7 +60,6 @@ public class DisplayAdapter extends BaseAdapter {
 			holder = (Holder) child.getTag();
 		}
 		
-		holder.txt_id.setText(id.get(pos));
 		holder.txt_fName.setText(fname.get(pos));
 		holder.txt_lName.setText(lname.get(pos));
 
@@ -70,7 +67,6 @@ public class DisplayAdapter extends BaseAdapter {
 	}
 
 	public class Holder {
-		TextView txt_id;
 		TextView txt_fName;
 		TextView txt_lName;
 	}

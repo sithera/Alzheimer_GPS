@@ -126,7 +126,7 @@ public class DisplayActivity extends Activity {
 			} while (cursor.moveToNext());
 		}
 
-		DisplayAdapter disadpt = new DisplayAdapter(DisplayActivity.this, user_id, user_fname, user_lname);
+		DisplayAdapter disadpt = new DisplayAdapter(DisplayActivity.this, user_fname, user_lname);
 		dbList.setAdapter(disadpt);
 		cursor.close();
 	}

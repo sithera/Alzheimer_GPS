@@ -47,5 +47,7 @@
     <string name="gps_t2">longitude</string>
     <string name="gps_t3">latitude</string>
     <string name="gps_t4">history</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="gps_t8">address</string>
 
 </resources>

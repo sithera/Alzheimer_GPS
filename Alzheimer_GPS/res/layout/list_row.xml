@@ -9,15 +9,11 @@
     style="@style/ListRow" >
 	  
     <TextView
-        android:id="@+id/txt_id"
-		style="@style/ListRowText" />
-
-    <TextView
         android:id="@+id/txt_fName"
         style="@style/ListRowText" />
 
     <TextView
         android:id="@+id/txt_lName"
         style="@style/ListRowText" />
-
+    
 </LinearLayout>
