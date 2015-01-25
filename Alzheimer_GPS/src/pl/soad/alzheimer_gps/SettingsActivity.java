@@ -49,8 +49,8 @@ public class SettingsActivity extends Activity {
 					values.put("range",range);
 					values.put("address",address);
 					db.update("startpoint", values, "nr=1", null);
-					db.close();
 					Toast.makeText(getApplicationContext(), "Zaktualizowano!", Toast.LENGTH_LONG).show();
+					finish();
 				}
 				else {
 					AlertDialog.Builder alertBuilder = new AlertDialog.Builder(SettingsActivity.this);

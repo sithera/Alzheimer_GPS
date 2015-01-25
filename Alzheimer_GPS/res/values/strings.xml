@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">kontaktydb</string>
+    <string name="app_name">Alzheimer Tracker</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_add">AddActivity</string>
-    <string name="title_activity_display">DisplayActivity</string>
+    <string name="title_activity_add">Alzheimer Tracker</string>
+    <string name="title_activity_display">Alzheimer Tracker</string>
 
     <style name="ButtonText">
         <item name="android:layout_width">fill_parent</item>
@@ -41,13 +41,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <string name="title_activity_gps">GpsActivity</string>
+    <string name="title_activity_gps">Alzheimer Tracker</string>
     <string name="hello_world">Hello world!</string>
-    <string name="gps_t1">dostawca</string>
-    <string name="gps_t2">longitude</string>
-    <string name="gps_t3">latitude</string>
-    <string name="gps_t4">history</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="gps_t8">address</string>
+    <string name="gps_t1">Dostawca</string>
+    <string name="gps_t2">Longitude</string>
+    <string name="gps_t3">Latitude</string>
+    <string name="gps_t4">Historia</string>
+    <string name="title_activity_settings">Alzheimer Tracker</string>
+    <string name="gps_t8">Adres:</string>
 
 </resources>

@@ -26,10 +26,11 @@ public final class R {
         public static final int button_red=0x7f020001;
         public static final int ic_launcher=0x7f020002;
         public static final int list_row_grey=0x7f020003;
+        public static final int logo=0x7f020004;
     }
     public static final class id {
         public static final int List=0x7f08000c;
-        public static final int action_settings=0x7f080022;
+        public static final int action_settings=0x7f080023;
         public static final int app_name=0x7f080017;
         public static final int btnAdd=0x7f08000d;
         public static final int btn_contacts=0x7f080019;
@@ -47,22 +48,23 @@ public final class R {
         public static final int gps_tableRow2=0x7f080010;
         public static final int gps_tableRow3=0x7f080012;
         public static final int gps_tableRow4=0x7f080014;
+        public static final int imageView1=0x7f08001b;
         public static final int last_TextView=0x7f080004;
         public static final int last_editTxt=0x7f080005;
         public static final int phone_TextView=0x7f080007;
         public static final int phone_editTxt=0x7f080008;
         public static final int save_btn=0x7f080009;
-        public static final int settings_button1=0x7f08001f;
-        public static final int settings_textView1=0x7f08001b;
-        public static final int settings_textView2=0x7f08001c;
-        public static final int settings_textView3=0x7f08001d;
-        public static final int settings_textView4=0x7f08001e;
+        public static final int settings_button1=0x7f080020;
+        public static final int settings_textView1=0x7f08001c;
+        public static final int settings_textView2=0x7f08001d;
+        public static final int settings_textView3=0x7f08001e;
+        public static final int settings_textView4=0x7f08001f;
         public static final int tableRow1=0x7f080000;
         public static final int tableRow2=0x7f080003;
         public static final int tableRow3=0x7f080006;
         public static final int title_display_activity=0x7f08000a;
-        public static final int txt_fName=0x7f080020;
-        public static final int txt_lName=0x7f080021;
+        public static final int txt_fName=0x7f080021;
+        public static final int txt_lName=0x7f080022;
     }
     public static final class layout {
         public static final int activity_add=0x7f030000;
