@@ -49,6 +49,8 @@
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait" >
         </activity>
+        
+		<service android:enabled="true" android:name=".GpsService" ></service>
     </application>
 
 </manifest>

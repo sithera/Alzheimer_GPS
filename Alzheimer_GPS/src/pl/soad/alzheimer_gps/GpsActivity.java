@@ -8,6 +8,9 @@ import android.app.Activity;
 import android.app.AlarmManager;
 //import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 //import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -23,8 +26,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 public class GpsActivity extends Activity implements LocationListener{
 
@@ -77,8 +78,9 @@ public class GpsActivity extends Activity implements LocationListener{
 			@Override
 			public void onClick(View v) {
 				b1.setText("w³¹czono œledzenie");
-				startGettingLocation();
-			}
+				startService(new Intent(GpsActivity.this, GpsService.class));
+				//startGettingLocation();
+			}			
 		});
 	}
 
