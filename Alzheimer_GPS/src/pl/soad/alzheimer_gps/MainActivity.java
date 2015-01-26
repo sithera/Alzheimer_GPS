@@ -36,13 +36,15 @@ public class MainActivity extends Activity {
 				if (onoff) {
 					btn_turnonoff.setText("W³¹cz œledzenie");
 					onoff = false;
+					GpsActivity gps = new GpsActivity();
+					gps.stopUsingGps();
 				}
 				else {
 					btn_turnonoff.setText("Wy³¹cz œledzenie");
 					onoff = true;
+					Intent i = new Intent(getApplicationContext(), GpsActivity.class);
+			        startActivity(i);
 				}
-				Intent i = new Intent(getApplicationContext(), GpsActivity.class);
-		        startActivity(i);
 				
 			}
 		});

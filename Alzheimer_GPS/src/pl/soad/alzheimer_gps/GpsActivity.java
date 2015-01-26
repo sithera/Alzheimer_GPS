@@ -6,9 +6,9 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.PendingIntent;
+//import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
+//import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -35,8 +35,8 @@ public class GpsActivity extends Activity implements LocationListener{
 	String bestProvider = "", reversedLocation = "", address;
 	Geocoder geocoder, reverseGeocoder;
 	AlarmManager alarmManager;
-	Intent intent;
-	PendingIntent pendingIntent;
+	//Intent intent;
+	//PendingIntent pendingIntent;
 	private double r; // km
 	private double longitude, latitude, longitudeChecked, latitudeChecked, longitudeVar, latitudeVar,
 	dLatitude, dLongitude, distance, longitudeReversed, latitudeReversed;
@@ -47,8 +47,8 @@ public class GpsActivity extends Activity implements LocationListener{
 	private DatabaseManager dbManager;
 	private SQLiteDatabase db;
 
-	private static final long MIN_TIME = 1000 * 10 * 1; // 10 seconds
-	private static final long MIN_DISTANCE = 0; // meters
+	private static final long MIN_TIME = 1000 * 10; // 10 seconds
+	private static final long MIN_DISTANCE = 5; // meters
 
 
 	@Override
@@ -62,8 +62,8 @@ public class GpsActivity extends Activity implements LocationListener{
 		t4 = (TextView) findViewById(R.id.gps_TextView4);
 		b1 = (Button)   findViewById(R.id.gps_btn1);              
 
-
-
+		//geocoder is for getting address from coordinates
+		//reverseGeocoder is for getting coordinates from address
 		geocoder = new Geocoder(this, Locale.getDefault());
 		reverseGeocoder = new Geocoder(this, Locale.getDefault());
 
@@ -71,17 +71,17 @@ public class GpsActivity extends Activity implements LocationListener{
 
 		t4.setText("Historia\n");
 
+		// on click start checking location
 		b1.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
+				b1.setText("w³¹czono œledzenie");
 				startGettingLocation();
 			}
-
 		});
 	}
 
-	//pobranie promienia z bazy
+	// get radius from DB
 	public void getDataDB(){
 		dbManager = new DatabaseManager(this);
 		db = dbManager.getReadableDatabase();
@@ -104,7 +104,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		longitudeChecked = temp[1];
 	}
 
-
+	// method called on every location update
 	@Override
 	public void onLocationChanged(Location location) {
 		getLocation();
@@ -113,6 +113,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		translateLongitude();              
 	}
 
+	// check if user is in proper area
 	public void checkLocation(){   
 		latitudeVar = latitudeChecked;	
 		longitudeVar = longitudeChecked;
@@ -137,6 +138,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		}
 	}
 
+	// convert address to coordinates
 	public double[] translateReverse(String reversedLocation){
 
 		try{
@@ -159,9 +161,9 @@ public class GpsActivity extends Activity implements LocationListener{
 		return ret;
 	}
 
+	// get actual coordinates from gps or network
 	public Location getLocation(){
 		try{
-
 			if(isNetworkEnabled){
 				bestProvider = "network";
 				if(locationManager != null){
@@ -172,20 +174,16 @@ public class GpsActivity extends Activity implements LocationListener{
 					latitude = location.getLatitude();
 				}
 			}
-
 			if(isGpsEnabled){
 				bestProvider = "gps";
 				if(locationManager != null){
 					location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 				}
-
 				if(location != null){
 					longitude = location.getLongitude();
 					latitude = location.getLatitude();
 				}
 			}
-
-
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -194,6 +192,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		return location;
 	}
 
+	// get coordinates the first time and set location updates
 	public void startGettingLocation(){
 		try{
 			locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
@@ -207,20 +206,18 @@ public class GpsActivity extends Activity implements LocationListener{
 					bestProvider = "network";
 					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);                                
 				}
-
 				if(isGpsEnabled){
 					bestProvider = "gps";
 					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
 				}
 			}
-
-
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 
+	// update text views, for user information and debug
 	public void updateTextViews(){
 
 		t1.setText("Najlepszy dostawca: " + bestProvider);
@@ -231,13 +228,12 @@ public class GpsActivity extends Activity implements LocationListener{
 
 	}
 
+	// convert coordinates to address
 	public void translateLongitude(){
 
 		List<Address> addresses = null;
 		try {
-			//Log.d("t", "j1");
 			addresses = geocoder.getFromLocation(getLatitude(), getLongitude(), 1);
-			//Log.d("t", "j2");
 			String result = "address: \n";
 
 			if (addresses != null && addresses.size() > 0){
@@ -261,12 +257,14 @@ public class GpsActivity extends Activity implements LocationListener{
 
 	}
 
+	// turn off checking location
 	public void stopUsingGps(){
 		if(locationManager != null){
 			locationManager.removeUpdates(GpsActivity.this);
 		}
 	}
 
+	// get longitude from current location
 	public double getLongitude(){
 		if(location != null){
 			longitude = location.getLongitude();
@@ -274,6 +272,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		return longitude;
 	}
 
+	// get latitude from current location
 	public double getLatitude(){
 		if(location != null){
 			latitude = location.getLatitude();
@@ -281,26 +280,25 @@ public class GpsActivity extends Activity implements LocationListener{
 		return latitude;
 	}
 
+	// check if can get location from any provider
 	public boolean canGetLocation(){
 		return this.canGetLocation;
 	}
 
+	// need to override these 3 methods to implement LocationListener 
 	@Override
 	public void onProviderDisabled(String arg0) {
-		// TODO Auto-generated method stub
-
+		// Auto-generated method stub
 	}
 
 	@Override
 	public void onProviderEnabled(String arg0) {
-		// TODO Auto-generated method stub
-
+		// Auto-generated method stub
 	}
 
 	@Override
 	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-		// TODO Auto-generated method stub
-
+		// Auto-generated method stub
 	}
 
 }
