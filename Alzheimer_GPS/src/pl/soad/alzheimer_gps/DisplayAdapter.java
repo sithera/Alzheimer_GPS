@@ -17,7 +17,6 @@ public class DisplayAdapter extends BaseAdapter {
 	private Context context;
 	private ArrayList<String> fname;
 	private ArrayList<String> lname;
-	private ArrayList<String> phone;
 
 	public DisplayAdapter(Context c, ArrayList<String> fname, ArrayList<String> lname) {
 		this.context = c;

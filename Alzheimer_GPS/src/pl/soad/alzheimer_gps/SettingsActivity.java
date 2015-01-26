@@ -22,7 +22,7 @@ public class SettingsActivity extends Activity {
 	private TextView range_textview, address_textview;
 	private String range, address;
 	private Button btn_range;
-	Context context = SettingsActivity.this;
+	private Context context = SettingsActivity.this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

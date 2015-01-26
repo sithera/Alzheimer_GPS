@@ -18,7 +18,6 @@ public class MainActivity extends Activity {
 	private Button btn_settings;
 	private boolean onoff;
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,13 +33,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (onoff) {
-					btn_turnonoff.setText("W³¹cz œledzenie");
+					btn_turnonoff.setText(R.string.main_j1);
 					onoff = false;
 					GpsActivity gps = new GpsActivity();
 					gps.stopUsingGps();
 				}
 				else {
-					btn_turnonoff.setText("Wy³¹cz œledzenie");
+					btn_turnonoff.setText(R.string.main_j2);
 					onoff = true;
 					Intent i = new Intent(getApplicationContext(), GpsActivity.class);
 			        startActivity(i);

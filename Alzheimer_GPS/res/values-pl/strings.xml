@@ -44,34 +44,34 @@
         <item name="android:textStyle">bold</item>
     </style>
 	
-	<string name="button_save">Save</string>
-	<string name="button_update">Update</string>
-	<string name="button_add">Add</string>
+	<string name="button_save">Zapisz</string>
+	<string name="button_update">Aktualizuj</string>
+	<string name="button_add">Dodaj</string>
 	
-    <string name="gps_t1">Provider</string>
-    <string name="gps_t2">Longitude</string>
-    <string name="gps_t3">Latitude</string>
-    <string name="gps_t4">History</string>
-    <string name="gps_t5">Turn on</string>
+    <string name="gps_t1">Dostawca</string>
+    <string name="gps_t2">Dł. geograficzna</string>
+    <string name="gps_t3">Szer. geograficzna</string>
+    <string name="gps_t4">Historia</string>
+    <string name="gps_t5">Włącz</string>
     
-    <string name="add_t1">Firstname:</string>
-    <string name="add_t2">Lastname:</string>
-	<string name="add_t3">Phone:</string>
+    <string name="add_t1">Imię:</string>
+    <string name="add_t2">Nazwisko:</string>
+	<string name="add_t3">Telefon:</string>
 	
-	<string name="main_t1">Turn on tracking</string>
-	<string name="main_t2">Contacts</string>
-	<string name="main_t3">Settings</string>
-	<string name="main_t4">Logo</string>
+	<string name="main_t1">Włącz śledzenie</string>
+	<string name="main_t2">Osoby kontaktowe</string>
+	<string name="main_t3">Ustawienia</string>
+	<string name="main_t4">Logo aplikacji</string>
 	
-	<string name="settings_t1">Current range of area in meters:</string>
-    <string name="settings_t2">Current center of area:</string>
+	<string name="settings_t1">Aktualny promień obszaru w metrach:</string>
+    <string name="settings_t2">Aktualny środek obszaru:</string>
     
-    <string name="display_t1">Contacts</string>
-        
-    <string name="gps_j1">Out of range, distance from center: </string>
-    <string name="gps_j2">In range, distance from center: </string>
+    <string name="display_t1">Osoby kontaktowe</string>
     
-    <string name="main_j1">Turn on tracking</string>
-    <string name="main_j2">Turn off tracking</string>
+    <string name="gps_j1">Jesteś poza obszarem, odległość od środka: </string>
+    <string name="gps_j2">Jesteś w obszarze, odległość od środka: </string>
+    
+    <string name="main_j1">Włącz śledzenie</string>
+    <string name="main_j2">Wyłącz śledzenie</string>
     
 </resources>

@@ -47,8 +47,8 @@ public class DisplayActivity extends Activity {
 				Intent i = new Intent(getApplicationContext(), AddActivity.class);
 				i.putExtra("update", false);
 				startActivity(i);
-
 			}
+		
 		});
 
 		// Click to update data
@@ -106,7 +106,7 @@ public class DisplayActivity extends Activity {
 		super.onResume();
 	}
 
-	/** Displays queries from SQLite */
+	// Displays queries from SQLite
 	private void displayData() {
 		db = dbManager.getWritableDatabase();
 		String[] kolumny = {"nr","imie","nazwisko","telefon"};
@@ -129,6 +129,7 @@ public class DisplayActivity extends Activity {
 		DisplayAdapter disadpt = new DisplayAdapter(DisplayActivity.this, user_fname, user_lname);
 		dbList.setAdapter(disadpt);
 		cursor.close();
+		db.close();
 	}
 
 }
