@@ -99,7 +99,8 @@ public class GpsActivity extends Activity implements LocationListener{
 		db.close();
 		addressToLatLon(address);
 	}
-	
+
+	// send SMS to all contacts in database
 	public void sendSms (String message) {
 			
 		SmsManager sms = null;
@@ -117,6 +118,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		db.close();
 	}
 	
+	// translate string contains address to lat/lon
 	public void addressToLatLon(String address){
 		double[] temp = new double[2];
 		temp = translateReverse(address);
@@ -150,11 +152,11 @@ public class GpsActivity extends Activity implements LocationListener{
 		distance = Math.sqrt(Math.pow(dLatitude, 2) + Math.pow(dLongitude, 2));             
 		Log.d("dist", String.valueOf(distance));
 		if (distance > r){
-			Toast.makeText(getApplicationContext(), "Jestes poza obszarem, odleg³oœæ od œrodka: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
-			sendSms("Jestes poza obszarem, odleg³oœæ od œrodka: " + String.valueOf(distance*1000));
+			Toast.makeText(getApplicationContext(),  R.string.gps_j1 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
+			sendSms(R.string.gps_j1 + String.valueOf(distance*1000));
 		}
 		else {
-			Toast.makeText(getApplicationContext(), "Jestes w obszarze, odleg³oœæ od œrodka: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), R.string.gps_j2 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -240,9 +242,9 @@ public class GpsActivity extends Activity implements LocationListener{
 	// update text views, for user information and debug
 	public void updateTextViews(){
 
-		t1.setText("Najlepszy dostawca: " + bestProvider);
-		t2.setText("Longitude: " + getLongitude());
-		t3.setText("Latitude: " + getLatitude());
+		t1.setText(R.string.gps_t1 + bestProvider);
+		t2.setText(R.string.gps_t2 + getLongitude() + "");
+		t3.setText(R.string.gps_t3 + getLatitude() + "");
 
 		t4.setText(t4.getText() + "" + getLongitude() + " / " + getLatitude() + "\n");
 
