@@ -13,7 +13,7 @@
         android:id="@+id/settings_textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:text="Aktualny promień obszaru w metrach:"
+        android:text="@string/settings_t1"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/settings_textView2"
         android:layout_centerVertical="true"
-        android:text="Aktualny środek obszaru:"
+        android:text="@string/settings_t2"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -55,7 +55,7 @@
         android:id="@+id/settings_button1"
         android:background="@drawable/button_red"
         android:layout_alignParentBottom="true"
-        android:text="Aktualizuj"
+        android:text="@string/button_update"
         style = "@style/ButtonText" />
 
 </RelativeLayout>

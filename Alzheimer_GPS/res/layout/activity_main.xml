@@ -13,38 +13,39 @@
  		    android:id="@+id/app_name"
  		    android:layout_width="fill_parent"
  		    android:layout_height="wrap_content"
- 		    android:text="Alzheimer Tracker"
+ 		    android:text="@string/title_activity_add"
  		    android:gravity="center"
  		    android:textColor="#FFFFFF"
  		    android:textSize="30sp"
  		    android:textStyle="bold" /> 
  		    
  		<Button
-        android:id="@+id/btn_turnonoff"
-        android:background="@drawable/button_red"
-        android:layout_above="@+id/btn_contacts"
-        android:layout_marginTop="10dp"
-        android:text="Włącz śledzenie"
-        style = "@style/ButtonText" />
+	        android:id="@+id/btn_turnonoff"
+	        android:background="@drawable/button_red"
+	        android:layout_above="@+id/btn_contacts"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/main_t1"
+	        style = "@style/ButtonText" />
 
  		<Button
-        android:id="@+id/btn_contacts"
-        android:background="@drawable/button_red"
-        android:layout_above="@+id/btn_settings"
-        android:layout_marginTop="10dp"
-        android:text="Osoby kontaktowe"
-        style = "@style/ButtonText" />
+	        android:id="@+id/btn_contacts"
+	        android:background="@drawable/button_red"
+	        android:layout_above="@+id/btn_settings"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/main_t2"
+	        style = "@style/ButtonText" />
  		
  		<Button
-        android:id="@+id/btn_settings"
-        android:background="@drawable/button_red"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:text="Ustawienia"
-        style = "@style/ButtonText" />
+	        android:id="@+id/btn_settings"
+	        android:background="@drawable/button_red"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/main_t3"
+	        style = "@style/ButtonText" />
 
  		<ImageView
  		    android:id="@+id/imageView1"
+ 		    android:contentDescription="@string/main_t4"
  		    android:layout_width="wrap_content"
  		    android:layout_height="wrap_content"
  		    android:layout_below="@+id/app_name"

@@ -22,7 +22,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Imię:"
+            android:text="@string/add_t1"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -53,7 +53,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nazwisko:"
+            android:text="@string/add_t2"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -83,7 +83,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Telefon:"
+            android:text="@string/add_t3"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -99,12 +99,12 @@
 
     </TableRow>
     
-        <Button
+    <Button
         android:id="@+id/save_btn"
         android:background="@drawable/button_red"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
-        android:text="Zapisz"
+        android:text="@string/button_save"
         style = "@style/ButtonText" />
     
 </RelativeLayout>

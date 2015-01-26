@@ -15,6 +15,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -96,7 +97,24 @@ public class GpsActivity extends Activity implements LocationListener{
 		db.close();
 		addressToLatLon(address);
 	}
-
+	
+	public void sendSms (String message) {
+			
+		SmsManager sms = null;
+		sms = SmsManager.getDefault();
+		
+		SQLiteDatabase db = dbManager.getReadableDatabase();
+		String kolumny[] = {"telefon"+""};
+		Cursor cursor = db.query("telefony", kolumny, null, null, null, null, null);
+		if(cursor.moveToFirst()){
+			do {
+				sms.sendTextMessage((cursor.getString(0)), null, message, null, null);
+			} while(cursor.moveToNext());
+		}
+		cursor.close();
+		db.close();
+	}
+	
 	public void addressToLatLon(String address){
 		double[] temp = new double[2];
 		temp = translateReverse(address);
@@ -131,7 +149,7 @@ public class GpsActivity extends Activity implements LocationListener{
 		Log.d("dist", String.valueOf(distance));
 		if (distance > r){
 			Toast.makeText(getApplicationContext(), "Jestes poza obszarem, odleg³oœæ od œrodka: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
-			// send sms;
+			sendSms("Jestes poza obszarem, odleg³oœæ od œrodka: " + String.valueOf(distance*1000));
 		}
 		else {
 			Toast.makeText(getApplicationContext(), "Jestes w obszarze, odleg³oœæ od œrodka: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
