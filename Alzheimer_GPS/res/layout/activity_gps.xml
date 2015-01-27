@@ -98,7 +98,7 @@
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/gps_tableRow4"
         android:layout_marginTop="10dp"
-        android:text="@string/gps_t5"
+        android:text="@string/main_j1"
         style = "@style/ButtonText" />
 
 </RelativeLayout>

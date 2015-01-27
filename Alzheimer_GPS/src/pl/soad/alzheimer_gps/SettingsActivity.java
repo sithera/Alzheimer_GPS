@@ -1,5 +1,7 @@
 package pl.soad.alzheimer_gps;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -7,22 +9,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View.OnClickListener;
+import android.content.res.Resources; 
+import android.util.DisplayMetrics; 
 
 public class SettingsActivity extends Activity {
 	private DatabaseManager dbManager;
 	private SQLiteDatabase db;
 	private TextView range_textview, address_textview;
 	private String range, address;
-	private Button btn_range;
+	private Button btn_range ;
+	private ImageButton btn_english, btn_polish;
 	private Context context = SettingsActivity.this;
+	Locale myLocale;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +41,10 @@ public class SettingsActivity extends Activity {
 		range_textview = (TextView) findViewById(R.id.settings_textView2);
 		address_textview = (TextView) findViewById(R.id.settings_textView4);		
 		btn_range = (Button) findViewById(R.id.settings_button1);
+		btn_english = (ImageButton) findViewById(R.id.imageButton2);
+		btn_polish = (ImageButton) findViewById(R.id.imageButton1);
 
+		
 		readDB();
 
 		btn_range.setOnClickListener(new OnClickListener() {
@@ -49,12 +61,12 @@ public class SettingsActivity extends Activity {
 					values.put("range",range);
 					values.put("address",address);
 					db.update("startpoint", values, "nr=1", null);
-					Toast.makeText(getApplicationContext(), "Zaktualizowano!", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), R.string.settings_j1, Toast.LENGTH_LONG).show();
 					finish();
 				}
 				else {
 					AlertDialog.Builder alertBuilder = new AlertDialog.Builder(SettingsActivity.this);
-					alertBuilder.setMessage("Wprowadü poprawne dane");
+					alertBuilder.setMessage(R.string.settings_j2);
 					alertBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 						public void onClick(DialogInterface dialog, int which) {
@@ -65,6 +77,38 @@ public class SettingsActivity extends Activity {
 				}	
 				db.close();
 			}			
+		});
+		
+		btn_english.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				    myLocale = new Locale("en"); 
+				    Resources res = getResources(); 
+				    DisplayMetrics dm = res.getDisplayMetrics(); 
+				    Configuration conf = res.getConfiguration(); 
+				    conf.locale = myLocale; 
+				    res.updateConfiguration(conf, dm); 
+				    Intent refresh = new Intent(context, MainActivity.class); 
+				    startActivity(refresh); 
+				    Toast.makeText(getApplicationContext(), R.string.settings_j1, Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		btn_polish.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			    myLocale = new Locale("pl"); 
+			    Resources res = getResources(); 
+			    DisplayMetrics dm = res.getDisplayMetrics(); 
+			    Configuration conf = res.getConfiguration(); 
+			    conf.locale = myLocale; 
+			    res.updateConfiguration(conf, dm); 
+			    Intent refresh = new Intent(context, MainActivity.class); 
+			    startActivity(refresh); 
+			    Toast.makeText(getApplicationContext(), R.string.settings_j1, Toast.LENGTH_SHORT).show();
+			}
 		});
 
 	}

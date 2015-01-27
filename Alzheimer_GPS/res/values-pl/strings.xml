@@ -48,11 +48,11 @@
 	<string name="button_update">Aktualizuj</string>
 	<string name="button_add">Dodaj</string>
 	
-    <string name="gps_t1">Dostawca</string>
-    <string name="gps_t2">Dł. geograficzna</string>
-    <string name="gps_t3">Szer. geograficzna</string>
-    <string name="gps_t4">Historia</string>
-    <string name="gps_t5">Włącz</string>
+    <string name="gps_t1">Dostawca: </string>
+    <string name="gps_t2">Dł. geograficzna: </string>
+    <string name="gps_t3">Szer. geograficzna: </string>
+    <string name="gps_t4">Historia: </string>
+    <string name="gps_t6">Adres:</string>
     
     <string name="add_t1">Imię:</string>
     <string name="add_t2">Nazwisko:</string>
@@ -63,8 +63,10 @@
 	<string name="main_t3">Ustawienia</string>
 	<string name="main_t4">Logo aplikacji</string>
 	
-	<string name="settings_t1">Aktualny promień obszaru w metrach:</string>
-    <string name="settings_t2">Aktualny środek obszaru:</string>
+	<string name="settings_t1">Promień obszaru w metrach:</string>
+    <string name="settings_t2">Środek obszaru:</string>
+    <string name="settings_t3">Zmień język</string>
+    
     
     <string name="display_t1">Osoby kontaktowe</string>
     
@@ -73,5 +75,10 @@
     
     <string name="main_j1">Włącz śledzenie</string>
     <string name="main_j2">Wyłącz śledzenie</string>
+    
+    <string name="settings_j1">Zaktualizowano!</string>
+    <string name="settings_j2">Wprowadź poprawne dane</string>
+    
+    
     
 </resources>

@@ -71,14 +71,16 @@ public class GpsActivity extends Activity implements LocationListener{
  
                 getDataDB();
  
-                t4.setText("Historia\n");
+                t4.setText("Historia: " + "\n");
  
                 // on click start checking location
                 b1.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                b1.setText("w³¹czono œledzenie");
+                                b1.setText(R.string.main_j2);
+                                Log.d("serv","serv");
                                 startService(new Intent(GpsActivity.this, GpsService.class));
+                                Log.d("serv","serv");
                                 //startGettingLocation();
                         }                      
                 });
@@ -153,7 +155,7 @@ public class GpsActivity extends Activity implements LocationListener{
                 Log.d("dist", String.valueOf(distance));
                 if (distance > r){
                         Toast.makeText(getApplicationContext(),  R.string.gps_j1 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
-                        sendSms(R.string.gps_j1 + String.valueOf(distance*1000));
+                        //sendSms(R.string.gps_j1 + String.valueOf(distance*1000));
                 }
                 else {
                         Toast.makeText(getApplicationContext(), R.string.gps_j2 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
@@ -256,7 +258,7 @@ public class GpsActivity extends Activity implements LocationListener{
                 List<Address> addresses = null;
                 try {
                         addresses = geocoder.getFromLocation(getLatitude(), getLongitude(), 1);
-                        String result = "Address: \n";
+                        String result = R.string.gps_t6 + "\n";
  
                         if (addresses != null && addresses.size() > 0){
                                 Address address = addresses.get(0);

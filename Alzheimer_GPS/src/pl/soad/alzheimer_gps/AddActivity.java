@@ -60,7 +60,7 @@ public class AddActivity extends Activity implements OnClickListener{
 		}
 		else {
 			AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddActivity.this);
-			alertBuilder.setMessage("Wprowadü poprawne dane");
+			alertBuilder.setMessage(R.string.settings_j2);
 			alertBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 				public void onClick(DialogInterface dialog, int which) {

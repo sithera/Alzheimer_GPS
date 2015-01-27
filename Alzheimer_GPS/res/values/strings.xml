@@ -48,11 +48,10 @@
 	<string name="button_update">Update</string>
 	<string name="button_add">Add</string>
 	
-    <string name="gps_t1">Provider</string>
-    <string name="gps_t2">Longitude</string>
-    <string name="gps_t3">Latitude</string>
-    <string name="gps_t4">History</string>
-    <string name="gps_t5">Turn on</string>
+    <string name="gps_t1">Provider: </string>
+    <string name="gps_t2">Longitude: </string>
+    <string name="gps_t3">Latitude: </string>
+    <string name="gps_t4">History: </string>
     
     <string name="add_t1">Firstname:</string>
     <string name="add_t2">Lastname:</string>
@@ -63,8 +62,9 @@
 	<string name="main_t3">Settings</string>
 	<string name="main_t4">Logo</string>
 	
-	<string name="settings_t1">Current range of area in meters:</string>
-    <string name="settings_t2">Current center of area:</string>
+	<string name="settings_t1">Range of area in meters:</string>
+    <string name="settings_t2">Center of area:</string>
+    <string name="settings_t3">Change language</string>
     
     <string name="display_t1">Contacts</string>
         
@@ -73,5 +73,8 @@
     
     <string name="main_j1">Turn on tracking</string>
     <string name="main_j2">Turn off tracking</string>
+    
+    <string name="settings_j1">Updated!</string>
+    <string name="settings_j2">Please enter valid data!</string>
     
 </resources>
