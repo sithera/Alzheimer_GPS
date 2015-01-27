@@ -6,12 +6,9 @@ import java.util.Locale;
  
 import android.app.Activity;
 import android.app.AlarmManager;
-//import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-//import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -37,8 +34,6 @@ public class GpsActivity extends Activity implements LocationListener{
         String bestProvider = "", reversedLocation = "", address;
         Geocoder geocoder, reverseGeocoder;
         AlarmManager alarmManager;
-        //Intent intent;
-        //PendingIntent pendingIntent;
         private double r; // km
         private double longitude, latitude, longitudeChecked, latitudeChecked, longitudeVar, latitudeVar,
         dLatitude, dLongitude, distance, longitudeReversed, latitudeReversed;
@@ -78,10 +73,7 @@ public class GpsActivity extends Activity implements LocationListener{
                         @Override
                         public void onClick(View v) {
                                 b1.setText(R.string.main_j2);
-                                Log.d("serv","serv");
-                                startService(new Intent(GpsActivity.this, GpsService.class));
-                                Log.d("serv","serv");
-                                //startGettingLocation();
+                                startGettingLocation();
                         }                      
                 });
         }
