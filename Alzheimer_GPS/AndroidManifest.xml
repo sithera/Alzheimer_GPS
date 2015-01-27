@@ -50,8 +50,6 @@
             android:screenOrientation="portrait"
             android:configChanges="locale|orientation" >
         </activity>
-        
-		<service android:enabled="true" android:name=".GpsService" ></service>
 		
     </application>
 
