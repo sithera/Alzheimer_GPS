@@ -100,7 +100,6 @@ public final class R {
         public static final int gps_t2=0x7f05000a;
         public static final int gps_t3=0x7f05000b;
         public static final int gps_t4=0x7f05000c;
-        public static final int gps_t6=0x7f05001e;
         public static final int main_j1=0x7f05001a;
         public static final int main_j2=0x7f05001b;
         public static final int main_t1=0x7f050010;

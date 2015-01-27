@@ -66,7 +66,7 @@ public class GpsActivity extends Activity implements LocationListener{
  
                 getDataDB();
  
-                t4.setText("Historia: " + "\n");
+                t4.setText("History: " + "\n");
  
                 // on click start checking location
                 b1.setOnClickListener(new OnClickListener() {
@@ -146,11 +146,11 @@ public class GpsActivity extends Activity implements LocationListener{
                 distance = Math.sqrt(Math.pow(dLatitude, 2) + Math.pow(dLongitude, 2));            
                 Log.d("dist", String.valueOf(distance));
                 if (distance > r){
-                        Toast.makeText(getApplicationContext(),  R.string.gps_j1 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Out of range, distance from center: "  + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
                         //sendSms(R.string.gps_j1 + String.valueOf(distance*1000));
                 }
                 else {
-                        Toast.makeText(getApplicationContext(), R.string.gps_j2 + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "In range, distance from center: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
                 }
         }
  
@@ -236,9 +236,9 @@ public class GpsActivity extends Activity implements LocationListener{
         // update text views, for user information and debug
         public void updateTextViews(){
  
-                t1.setText(R.string.gps_t1 + bestProvider);
-                t2.setText(R.string.gps_t2 + getLongitude() + "");
-                t3.setText(R.string.gps_t3 + getLatitude() + "");
+                t1.setText("Provider: " + bestProvider);
+                t2.setText("Latitude: " + getLongitude() + "");
+                t3.setText("Longitude: " + getLatitude() + "");
  
                 t4.setText(t4.getText() + "" + getLongitude() + " / " + getLatitude() + "\n");
  
@@ -250,7 +250,7 @@ public class GpsActivity extends Activity implements LocationListener{
                 List<Address> addresses = null;
                 try {
                         addresses = geocoder.getFromLocation(getLatitude(), getLongitude(), 1);
-                        String result = R.string.gps_t6 + "\n";
+                        String result = "Address: " + "\n";
  
                         if (addresses != null && addresses.size() > 0){
                                 Address address = addresses.get(0);
