@@ -32,6 +32,7 @@ public class SettingsActivity extends Activity {
 	private ImageButton btn_english, btn_polish;
 	private Context context = SettingsActivity.this;
 	Locale myLocale;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

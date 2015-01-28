@@ -7,6 +7,7 @@ import java.util.Locale;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
@@ -16,7 +17,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -43,9 +43,10 @@ public class GpsActivity extends Activity implements LocationListener{
         boolean isNetworkEnabled = false;
         private DatabaseManager dbManager;
         private SQLiteDatabase db;
+        private boolean onoff;
  
         private static final long MIN_TIME = 1000 * 10; // 10 seconds
-        private static final long MIN_DISTANCE = 5; // meters
+        private static final long MIN_DISTANCE = 100; // meters
  
  
         @Override
@@ -66,14 +67,25 @@ public class GpsActivity extends Activity implements LocationListener{
  
                 getDataDB();
  
-                t4.setText("History: " + "\n");
- 
+                t4.setText("History: \n");
+                
+                onoff = true;
                 // on click start checking location
                 b1.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                        	if (onoff){
                                 b1.setText(R.string.main_j2);
-                                startGettingLocation();
+                        		onoff = false;
+                        		startGettingLocation();
+                        	}
+                        	else{
+                        		onoff = true;
+                        		stopUsingGps();
+                        		Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            			        startActivity(i);                      		
+                        	}
+                            
                         }                      
                 });
         }
@@ -124,6 +136,11 @@ public class GpsActivity extends Activity implements LocationListener{
         @Override
         public void onLocationChanged(Location location) {
                 getLocation();
+                try {
+                    Thread.sleep(1000);                 //1000 milliseconds is one second.
+                } catch(InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
                 updateTextViews();
                 checkLocation();
                 translateLongitude();              
@@ -144,13 +161,12 @@ public class GpsActivity extends Activity implements LocationListener{
                 dLongitude = longitude - longitudeVar;
  
                 distance = Math.sqrt(Math.pow(dLatitude, 2) + Math.pow(dLongitude, 2));            
-                Log.d("dist", String.valueOf(distance));
                 if (distance > r){
-                        Toast.makeText(getApplicationContext(), "Out of range, distance from center: "  + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
-                        //sendSms(R.string.gps_j1 + String.valueOf(distance*1000));
+                        Toast.makeText(getApplicationContext(), "Out of range, distance from center: "  + String.valueOf((int)(distance*1000)), Toast.LENGTH_LONG).show();
+                        sendSms("Out of range, distance from center: " + String.valueOf((int)(distance*1000)));
                 }
                 else {
-                        Toast.makeText(getApplicationContext(), "In range, distance from center: " + String.valueOf(distance*1000), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "In range, distance from center: " + String.valueOf((int)(distance*1000)), Toast.LENGTH_LONG).show();
                 }
         }
  
@@ -237,8 +253,8 @@ public class GpsActivity extends Activity implements LocationListener{
         public void updateTextViews(){
  
                 t1.setText("Provider: " + bestProvider);
-                t2.setText("Latitude: " + getLongitude() + "");
-                t3.setText("Longitude: " + getLatitude() + "");
+                t2.setText("Latitude: " + getLongitude());
+                t3.setText("Longitude: " + getLatitude()	);
  
                 t4.setText(t4.getText() + "" + getLongitude() + " / " + getLatitude() + "\n");
  
